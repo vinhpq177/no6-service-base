@@ -35,17 +35,17 @@
   ],
   "dependencies": {
     "lodash": "^4.17.15",
-    "no6-app-oauth": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#app-oauth",
-    "no6-bodyparser": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#bodyparser",
-    "no6-http": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#http",
-    "no6-jov": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#jov",
-    "no6-log": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#log",
-    "no6-mongo": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#mongo",
-    "no6-redis": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#redis",
-    "no6-requesthasher": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#requesthasher",
-    "no6-route": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#route",
-    "no6-server": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#server",
-    "no6-utils": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#utils"
+    "no6-app-oauth": "^1.0.2",
+    "no6-bodyparser": "^1.0.2",
+    "no6-http": "^1.0.2",
+    "no6-jov": "^1.0.2",
+    "no6-log": "^1.0.2",
+    "no6-mongo": "^1.0.2",
+    "no6-redis": "^1.0.2",
+    "no6-requesthasher": "^1.0.2",
+    "no6-route": "^1.0.2",
+    "no6-server": "^1.0.2",
+    "no6-utils": "^1.0.2"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.137",
