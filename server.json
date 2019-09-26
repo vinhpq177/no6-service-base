@@ -1,0 +1,70 @@
+{
+  "mongo": {
+    "DEFAULT": {
+      "url": "mongodb://172.22.0.5:27017/",
+      "opts": {
+        "useUnifiedTopology": true,
+        "auth": {
+          "user": "writer",
+          "password": "a08fef4a788803ed04be9810b7ab0185"
+        },
+        "authSource": "admin",
+        "poolSize": 1
+      }
+    },
+    "UPSERT": {
+      "ref": "DEFAULT",
+      "url": "mongodb://172.22.0.5:27017/",
+      "opts": {
+        "useUnifiedTopology": true,
+        "auth": {
+          "user": "reader",
+          "password": "5908af4c2726c012f36374c608659dd2"
+        },
+        "authSource": "admin",
+        "poolSize": 1
+      }
+    },
+    "OAUTH": {
+      "url": "mongodb://172.22.0.5:27017/",
+      "opts": {
+        "useUnifiedTopology": true,
+        "auth": {
+          "user": "oauth",
+          "password": "a323ca666f5261a8037dc0e0247520ed"
+        },
+        "authSource": "oauth",
+        "poolSize": 10
+      }
+    },
+    "SYSLOGS": {
+      "url": "mongodb://172.22.0.5:27017/",
+      "opts": {
+        "useUnifiedTopology": true,
+        "auth": {
+          "user": "writer",
+          "password": "a08fef4a788803ed04be9810b7ab0185"
+        },
+        "authSource": "admin",
+        "poolSize": 1
+      }
+    }
+  },
+  "redis": {
+    "DEFAULT": {
+      "host": "172.22.0.6",
+      "opts": {
+        "password": "35ad81b3f3e23a5910cb6059d8941178"
+      }
+    },
+    "AUTHORIZ": {
+      "host": "172.22.0.6",
+      "opts": {
+        "password": "35ad81b3f3e23a5910cb6059d8941178"
+      }
+    }
+  },
+  "services": {
+    "oauth": "https://onapis.com/oauth"
+  }
+}

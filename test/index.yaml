@@ -1,0 +1,17 @@
+---
+title: Base service
+des: Unit test
+saveTo: ./../DOC.md
+# debug: true
+# Document
+docs:
+  token: user or admin token
+# Variables
+vars:
+  url: http://localhost:8111
+# Testcases
+steps:
+- Test API:
+    GET: ${url}/Test/Thanh
+    var: msg
+- ${msg}

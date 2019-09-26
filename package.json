@@ -1,0 +1,63 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "Base Service",
+  "main": "dist/index.js",
+  "private": true,
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "nodemon --watch bin/.nodemon --exec \"node --inspect -r ts-node/register -r ./bin/tsconfig-paths-bootstrap.js src/index.ts\"",
+    "dev:restart": "node ./bin/nodemon.restart.js",
+    "watch": "npm run build:clean && tsc -w --sourcemap",
+    "pull": "git checkout . && git pull && git log --summary -n 3",
+    "switch": "git checkout . && git fetch && git checkout -b ",
+    "prod": "node .",
+    "install:min": "cp ./package.json ./package.json.tmp && cp ./package.min.json ./package.json && npm install && cp ./package.json ./package.min.json && cp ./package.json.tmp ./package.json",
+    "build:min": "npm run build:clean && tsc && npm run build:resolve-module && npm run build:min:copyfiles && cd dist && npm install --only=production",
+    "build:min:copyfiles": "cp ./appconfig.json ./dist/ && cp ./package.min.json ./dist/package.json",
+    "build": "npm run build:clean && tsc && npm run build:resolve-module && npm run build:copyfiles && cd dist && npm install --only=production",
+    "build:resolve-module": "node bin/tsconfig",
+    "build:copyfiles": "cp ./appconfig.json ./dist/ && cp ./package.json ./dist/",
+    "build:clean": "rimraf -rf dist",
+    "rebuild": "npm run pull && npm run build",
+    "test": "testapi test",
+    "perf": "k6 run test-perf/index.js",
+    "newtest": "api-create-doc test",
+    "// start": "npm run build:resolve-module && node --inspect .",
+    "// dev-old": "npm run build:clean && tsc --sourcemap && npm start | npm run watch",
+    "// watch-wp": "npm run build:clean && webpack && cd dist",
+    "// build-wp": "npm run build:clean && webpack && cd dist && npm install --only=production"
+  },
+  "appconfig": [
+    "appconfig.json",
+    "server.json",
+    "global.json?env,oauthConfig,mongo,redis,encrypt,services,log,cors,#oauth"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "no6-app-oauth": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#app-oauth",
+    "no6-bodyparser": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#bodyparser",
+    "no6-http": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#http",
+    "no6-jov": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#jov",
+    "no6-log": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#log",
+    "no6-mongo": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#mongo",
+    "no6-redis": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#redis",
+    "no6-requesthasher": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#requesthasher",
+    "no6-route": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#route",
+    "no6-server": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#server",
+    "no6-utils": "git+ssh://git@github.com/doanthuanthanh88/no6-plugin.git#utils"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.137",
+    "@types/node": "^11.13.19",
+    "nodemon": "^1.19.2",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.3.0",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^5.20.0",
+    "tslint-config-standard": "^7.1.0",
+    "typescript": "^3.6.2"
+  },
+  "author": "doanthuanthanh@gmail.com",
+  "license": "MIT"
+}

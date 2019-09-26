@@ -1,0 +1,69 @@
+{
+  "env": "",
+  "url": "http://0.0.0.0:8111",
+  "path": "",
+  "log": {
+    "level": "debug"
+  },
+  "oauthConfig": {
+    "redisName": "AUTHORIZ",
+    "localCachedTimeOut": 30000
+  },
+  "mongo": {
+    "DEFAULT": {
+      "dbname": "base",
+      "url": "mongodb://localhost:27017/",
+      "opts": {
+        "useUnifiedTopology": true
+      }
+    },
+    "UPSERT": {
+      "dbname": "base",
+      "url": "mongodb://localhost:27017/",
+      "opts": {
+        "useUnifiedTopology": true
+      }
+    },
+    "SYSLOGS": {
+      "url": "mongodb://localhost:27017/",
+      "dbname": "logs",
+      "opts": {
+        "useUnifiedTopology": true
+      }
+    }
+  },
+  "redis": {
+    "DEFAULT": {
+      "host": "localhost",
+      "port": 6379,
+      "db": 0
+    },
+    "AUTHORIZ": {
+      "host": "localhost",
+      "port": 6379,
+      "db": 9
+    }
+  },
+  "cors": {
+    "origin": "*",
+    "exposeHeaders": [
+      "token",
+      "project_id",
+      "account_id",
+      "action"
+    ]
+  },
+  "encrypt": {
+    "pwd": "",
+    "mode": [
+      "query",
+      "body",
+      "response"
+    ],
+    "baseOnRequest": true
+  },
+  "services": {
+    "oauth": "http://localhost:6111"
+  },
+  "app": {}
+}

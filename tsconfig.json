@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "traceResolution": false,
+    "newLine": "lf",
+    "typeRoots": [
+      "node_modules/@types",
+      "typings"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@controller/*": [
+        "controller/*"
+      ],
+      "@service/*": [
+        "service/*"
+      ],
+      "@common/*": [
+        "common/*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "outDir": "dist"
+  },
+  "exclude": [
+    "src/controller/kafka/*",
+    "src/controller/rmq/*"
+  ]
+}
