@@ -12,6 +12,6 @@ vars:
 # Testcases
 steps:
 - Test API:
-    GET: ${url}/Test/Thanh
+    GET: ${url}/Test/world
     var: msg
 - ${msg}
