@@ -1,0 +1,16 @@
+sequenceDiagram
+  Client    ->>   Service A : request /api-A
+  Service A ->>   Service A : generateCorrid():corrid
+  Service A ->>   Service A : doSomething(corrid)
+  Service A ->>   Service B : request(corrid) /api-B
+  alt error
+    Service B ->>   Service B : doSomethingError(corrid)
+    Service B -->>  Service A : return error
+    Service A ->>   Service A : log(error, corrid)
+    Service A -->>  Client    : return error
+  else passed
+    Service B ->>  Service B : doSomething(corrid)
+    Service B -->>  Service A : return data B
+    Service A -->>  Service A : doSomething(corrid, B)
+    Service A -->>  Client    : return data
+  end

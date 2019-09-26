@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "private": true,
   "scripts": {
-    "start": "npm run dev",
+    "start": "nodemon --watch src --exec \"npm run build:resolve-module && node --inspect .\"",
     "dev": "nodemon --watch bin/.nodemon --exec \"node --inspect -r ts-node/register -r ./bin/tsconfig-paths-bootstrap.js src/index.ts\"",
     "dev:restart": "node ./bin/nodemon.restart.js",
     "watch": "npm run build:clean && tsc -w --sourcemap",
@@ -31,7 +31,7 @@
   "appconfig": [
     "appconfig.json",
     "server.json",
-    "global.json?env,oauthConfig,mongo,redis,encrypt,services,log,cors,#oauth"
+    "global.json?env,oauthConfig,mongo,redis,encrypt,services,log,cors,#base"
   ],
   "dependencies": {
     "lodash": "^4.17.15",

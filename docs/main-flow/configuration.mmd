@@ -1,0 +1,9 @@
+sequenceDiagram
+  App             ->> appconfig.json  : import
+  appconfig.json  ->> server.json     : import
+  server.json     ->> global.json     : import
+  global.json     -->> server.json    : return data: G
+  server.json     ->> server.json     : Merge & is overided data from global(): GS
+  server.json     -->> appconfig.json : return data: GS
+  appconfig.json  ->> appconfig.json     : Merge & is overided data from server(): GSA
+  appconfig.json     -->> App : return data: GSA

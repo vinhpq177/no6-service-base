@@ -1,0 +1,8 @@
+sequenceDiagram
+  Client    ->> Route     : request API
+  Route     ->> Controller: call
+  Controller->> Service   : call
+  Service   ->> Service   : do something
+  Service   -->> Controller: return data
+  Controller-->> Route     : return data
+  Route     -->> Client    : return data

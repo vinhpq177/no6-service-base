@@ -7,6 +7,36 @@ Base service
 3. Manage log center, support manage corr_id to manage log between services, functions
 4. Combine unit test with generate DOCs into project. This make build API become professonal and 
 
+# How to begin to develop
+
+1. Install libraries
+
+    ```sh
+      npm install
+    ```
+
+2. Run typescript compiler & start server
+
+    ```sh
+      npm run dev
+    ```
+
+# How to deploy on production environment
+
+1. Build project
+
+    ```sh
+      npm run build
+    ```
+
+2. After the building done, we will get ```dist``` folder , now we only go in dist folder then run
+
+    ```sh
+      npm run prod
+    ```
+
+> You can mount ```dist``` folder into docker container to run
+
 # Project structure
 ```yaml
 - src: # Source files
@@ -23,6 +53,7 @@ Base service
   env.development.ts: # Be loaded for development environment
   env.production.ts: # Be loaded for production environment
 - docs: # Documents, Flow charts...
+  - main-flow: # Includes the sequences, uml diagram for main flows
 - dist: # Contains js files which are built from source code
 - deploy: # Contains patch, sql migration ...
 - test: # Contains unit test file
@@ -33,9 +64,26 @@ Dockerfile: # Create docker container for this service
 package.json: # Declare the configuration files in the field "appconfig"
 ```
 
-# Flow code
+# Main flows
 
-![flow code](docs/code.svg)
+1. Flow code
+    
+  ![flow code](docs/main-flow/code.svg)
+
+2. Flow error handler
+    
+  ![flow error handler](docs/main-flow/error.svg)
+
+3. Flow config loader
+
+  - Default configuration is set in "appconfig" in package.json.
+  - Default value is [
+    "appconfig.json",
+    "server.json",
+    "global.json?env,oauthConfig,mongo,redis,encrypt,services,log,cors,#base"
+  ]
+
+  ![flow config loader](docs/main-flow/configuration.svg)
 
 # API Document
 Click [here](./DOC.md) to see APIs document

@@ -12,12 +12,7 @@ class AppScheme extends BaseSchema {
 
 }
 
-interface ISchema extends Schema {
-
-  mongoId(): ISchema
-  toMongoId(): ISchema
-  toMongoObject(): ISchema
-}
+type ISchema = Schema & MongoSchema & AppScheme
 
 extend(MongoSchema, AppScheme)
 
