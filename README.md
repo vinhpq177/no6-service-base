@@ -21,6 +21,16 @@ Base service
       npm run dev
     ```
 
+3. How to run unit test
+    > Write unit test in ```test/*.yaml``` base on [api-testing-doc](https://github.com/doanthuanthanh88/api-testing-doc) tool
+
+    ```sh
+      npm test
+    ```
+
+4. How to run performance test
+    > Write performance test in ```test-perf``` base on [k6](https://k6.io/) tool
+
 # How to deploy on production environment
 
 1. Build project
@@ -70,9 +80,9 @@ package.json: # Declare the configuration files in the field "appconfig"
     
   ![flow code](docs/main-flow/code.svg)
 
-2. Flow error handler
+2. Flow error handling
     
-  ![flow error handler](docs/main-flow/error.svg)
+  ![flow error handling](docs/main-flow/error.svg)
 
 3. Flow config loader
 
@@ -84,6 +94,10 @@ package.json: # Declare the configuration files in the field "appconfig"
   ]
 
   ![flow config loader](docs/main-flow/configuration.svg)
+
+# Project Document
+
+Click [here](./docs/Guide.md) to see Project document
 
 # API Document
 Click [here](./DOC.md) to see APIs document
