@@ -33,5 +33,9 @@ Dockerfile: # Create docker container for this service
 package.json: # Declare the configuration files in the field "appconfig"
 ```
 
+# Flow code
+
+![flow code](docs/code.svg)
+
 # API Document
 Click [here](./DOC.md) to see APIs document

@@ -1,0 +1,10 @@
+// {type:sequence}
+// {generate:true}
+
+[:Client]request API>[:Route]
+[:Route]call>[:Controller]
+[:Controller]call>[:Service]
+[:Service]do something>[:Service]
+[:Service]return data.>[:Controller]
+[:Controller]return data.>[:Route]
+[:Route]return data.>[:Client]
